@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arc de Sant Martí</title>
+    <style>
+        .rainbow {
+            color: black;
+            transition: color 0.3s;
+        }
+        .rainbow:hover {
+            color: var(--hover-color);
+        }
+    </style>
+</head>
+<body>
+    <h3 id="header">Arc de Sant Martí</h3>
+    <p class="rainbow" style="--hover-color: red;">Rojo,Red,roig</p>
+    <p class="rainbow" style="--hover-color: orange;">Naranja,taronja,Orange</p>
+    <p class="rainbow" style="--hover-color: yellow;">Amarillo,groc,Yellow</p>
+    <p class="rainbow" style="--hover-color: green;">Verde,verd,Green</p>
+    <p class="rainbow" style="--hover-color: lightblue;">Azul claro,blau clar,light blue,</p>
+    <p class="rainbow" style="--hover-color: blue;">blau,blue,azul</p>
+    <p class="rainbow" style="--hover-color: violet;">mora,purple,morado</p>
+
+    <script>
+        document.getElementById('header').addEventListener('click', function() {
+            const paragraphs = document.querySelectorAll('.rainbow');
+            paragraphs.forEach(p => p.style.color = p.style.getPropertyValue('--hover-color'));
+        });
+    </script>
+</body>
+</html>
